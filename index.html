@@ -4,23 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Открыть в Safari</title>
+    <title>Переход в Safari</title>
     <script>
-        function openInSafari() {
-            // Попытка открыть Safari через универсальную ссылку (deeplink)
-            window.location.href = "safari://"; // Открытие браузера Safari
+        function redirectToSafari() {
+            // Попытка открыть Safari через ссылку (замените на свой deeplink)
+            window.location.href = "safari://your-url"; // Замените на свой deeplink
         }
 
         window.onload = function() {
             // Таймер на 3 секунды перед редиректом
             setTimeout(function() {
-                openInSafari();
+                redirectToSafari();
             }, 3000); // Задержка в 3 секунды
         }
     </script>
 </head>
 <body>
-    <h1>Ожидание 3 секунды для автоматического открытия в Safari...</h1>
-    <p>Если автоматическое открытие не сработало, <a href="safari://" target="_blank">нажмите здесь</a>.</p>
+    <h1>Вы будете перенаправлены в Safari через 3 секунды...</h1>
+    <p>Если автоматическое перенаправление не сработает, <a href="safari://your-url" target="_blank">нажмите здесь</a>.</p>
 </body>
 </html>
