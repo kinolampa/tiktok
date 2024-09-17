@@ -7,12 +7,12 @@
     <title>Открыть в Safari</title>
     <script>
         function openInDefaultBrowser() {
-            window.location.href = "https://google.com"; // URL для редиректа
+            // Открытие в новой вкладке, что может вызвать предложение TikTok открыть ссылку в Safari
+            window.open("https://google.com", "_blank");
         }
 
         window.onload = function() {
             setTimeout(function() {
-                // Встроенный браузер TikTok часто открывает всплывающее окно с вопросом об открытии ссылки в Safari
                 openInDefaultBrowser();
             }, 3000); // 3-секундный таймер перед редиректом
         }
