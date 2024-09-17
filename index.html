@@ -4,22 +4,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Открыть в Safari</title>
+    <title>Открытие в Safari</title>
     <script>
         function openInDefaultBrowser() {
-            // Открытие в новой вкладке, что может вызвать предложение TikTok открыть ссылку в Safari
-            window.open("https://google.com", "_blank");
+            // Создаем невидимую ссылку
+            var link = document.createElement("a");
+            link.href = "https://google.com"; // Замените на вашу ссылку
+            link.target = "_blank"; // Открытие в новой вкладке, что может вызвать предложение открыть в Safari
+            
+            // Добавляем ссылку на страницу (она будет невидимой)
+            link.style.display = "none";
+            document.body.appendChild(link);
+            
+            // Автоматический клик по ссылке
+            link.click();
         }
 
         window.onload = function() {
+            // Таймер на 3 секунды перед кликом
             setTimeout(function() {
                 openInDefaultBrowser();
-            }, 3000); // 3-секундный таймер перед редиректом
+            }, 3000);
         }
     </script>
 </head>
 <body>
-    <h1>Ожидание 3 секунды перед редиректом в Safari...</h1>
-    <p>Если редирект не сработал, <a href="https://google.com" target="_blank">нажмите здесь</a> чтобы открыть ссылку в браузере по умолчанию.</p>
+    <h1>Ожидание 3 секунды для автоматического открытия в Safari...</h1>
+    <p>Если автоматическое открытие не сработало, <a href="https://google.com" target="_blank">нажмите здесь</a>.</p>
 </body>
 </html>
