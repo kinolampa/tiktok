@@ -4,32 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Открытие в Safari</title>
+    <title>Открыть в Safari</title>
     <script>
-        function openInDefaultBrowser() {
-            // Создаем невидимую ссылку
-            var link = document.createElement("a");
-            link.href = "https://google.com"; // Замените на вашу ссылку
-            link.target = "_blank"; // Открытие в новой вкладке, что может вызвать предложение открыть в Safari
-            
-            // Добавляем ссылку на страницу (она будет невидимой)
-            link.style.display = "none";
-            document.body.appendChild(link);
-            
-            // Автоматический клик по ссылке
-            link.click();
+        function openInSafari() {
+            // Попытка открыть Safari через универсальную ссылку (deeplink)
+            window.location.href = "safari://"; // Открытие браузера Safari
         }
 
         window.onload = function() {
-            // Таймер на 3 секунды перед кликом
+            // Таймер на 3 секунды перед редиректом
             setTimeout(function() {
-                openInDefaultBrowser();
-            }, 3000);
+                openInSafari();
+            }, 3000); // Задержка в 3 секунды
         }
     </script>
 </head>
 <body>
     <h1>Ожидание 3 секунды для автоматического открытия в Safari...</h1>
-    <p>Если автоматическое открытие не сработало, <a href="https://google.com" target="_blank">нажмите здесь</a>.</p>
+    <p>Если автоматическое открытие не сработало, <a href="safari://" target="_blank">нажмите здесь</a>.</p>
 </body>
 </html>
